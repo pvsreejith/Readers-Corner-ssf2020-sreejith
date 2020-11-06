@@ -13,22 +13,11 @@
 
     {{#each result}}
 
-            <div class="list-group">
-                <ul>
-
-                    <li>
-
-                            <a class="list-group-item" href="{{root}}book/{{ this.book_id }}">{{ this.title }}</a><br>
-                    </li>
-                </ul>
-
-                    
-            </div>
-        
-            
-        
+            <div >           
+                <a class="list-group-item list-group-item-action" href="{{root}}book/{{ this.book_id }}">{{ this.title }}</a>
+            </div>      
+       
     {{/each}}
-
 
 
             <!-- navigation buttons -->
