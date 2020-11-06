@@ -1,0 +1,44 @@
+
+<a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Home</a>
+
+<div class="row">
+	<div class="col-4 d-flex justify-content-center">
+		<img class="img-fluid img-thumbnail rounded" src="{{ book.image_url}}">
+	</div>
+	<div class="col-8">
+		<h3>{{ book.title }}</h3>
+        <h4>by {{ book.authors }}</h4>
+        <h5>Pages:{{ book.pages }}</h5>
+        <h5>Genre: {{ book.genres }}</h5>
+        <h5>Format: {{ book.format }}</h5>
+		<p class="lead">
+			{{{ book.description }}}
+		</p>
+		<p>
+			<code>Rating: </code> <i>{{ book.rating }}</i>
+		</p>
+		<div class="d-flex justify-content-between">
+			<a class="btn btn-sm btn-warning" href="/">
+				<i class="fas fa-home mr-1"></i>
+				Back
+			</a>
+
+		</div>
+	</div>
+</div>
+
+<br>
+
+
+<form method="GET" action="/findreview">
+
+<div>
+<button type="submit" name="title" value="{{ book.title }}" class="btn btn-secondary btn-lg btn-block">Find Review</button>
+
+</div>
+
+</form>
+
+
+
+

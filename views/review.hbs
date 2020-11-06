@@ -1,0 +1,22 @@
+<a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Home</a>
+
+<h3>Your search for review  {{ search }}</h3>
+<h3>return(s) {{lengthArray}} result</h3>
+
+{{#if hasContent}}
+    {{#each reviewArray}}
+        <div>
+            <h5>{{ this.booktitle }}</h5>
+            <h5>{{ this.author }}</h5>
+            <h5>{{ this.reviewer }}</h5>
+            <h5>{{ this.date }}</h5>
+            <h5>{{ this.link }}</h5>
+
+            <a href="{{ this.url }}" target="_blank">Full review</a>           
+        </div>
+
+        <hr>
+    {{/each}}
+{{else}}
+    <h3>Your search returns 0 review</h3>
+{{/if}}

@@ -1,0 +1,59 @@
+<a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Home</a>
+
+{{#if hasResult}}
+    <h2>Search Results</h2>
+    <table>
+        
+        </thead>
+        <tbody>
+
+<h3> {{ root }}</h3>
+<h3>Letter {{ q }}</h3>
+
+
+    {{#each result}}
+
+            <div class="list-group">
+                <ul>
+
+                    <li>
+
+                            <a class="list-group-item" href="{{root}}book/{{ this.book_id }}">{{ this.title }}</a><br>
+                    </li>
+                </ul>
+
+                    
+            </div>
+        
+            
+        
+    {{/each}}
+
+
+
+            <!-- navigation buttons -->
+            <tr>
+                <td>
+                    <form method="GET" action="/search">
+                        <input type="hidden" name="q" value="{{ q }}">
+                        <input type="hidden" name="offset" value={{ prevOffset }}>
+                        <button type="submit">Previous</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="GET" action="/search">
+                        <input type="hidden" name="q" value="{{ q }}">
+                        <input type="hidden" name="offset" value={{ nextOffset }}>
+                        <button type="submit">Next</button>
+                    </form>
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+{{else}}
+    <h2>Your search produces no result</h2>
+
+{{/if}}
